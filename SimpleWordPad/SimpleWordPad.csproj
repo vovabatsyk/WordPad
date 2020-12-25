@@ -97,6 +97,12 @@
     <None Include="Resources\Double-J-Design-Ravenna-3d-Save.ico" />
     <None Include="Resources\Pelfusion-Flat-Folder-Open-Folder.ico" />
     <None Include="Resources\Gakuseisean-Ivista-2-Files-New-File.ico" />
+    <None Include="Resources\Toma4025-Rumax-Folder-fonts.ico" />
+    <None Include="Resources\Icons8-Windows-8-Editing-Bold.ico" />
+    <None Include="Resources\Icons8-Windows-8-Editing-Italic.ico" />
+    <None Include="Resources\Icons8-Ios7-Editing-Underline.ico" />
+    <None Include="Resources\Icons8-Ios7-Editing-Strikethrough.ico" />
+    <None Include="Resources\Trayse101-Photoshop-Filetypes-Colors.ico" />
     <Content Include="Wordpad.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

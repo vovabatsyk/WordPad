@@ -103,6 +103,46 @@ namespace SimpleWordPad.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Icons8_Ios7_Editing_Strikethrough {
+            get {
+                object obj = ResourceManager.GetObject("Icons8-Ios7-Editing-Strikethrough", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Icons8_Ios7_Editing_Underline {
+            get {
+                object obj = ResourceManager.GetObject("Icons8-Ios7-Editing-Underline", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Icons8_Windows_8_Editing_Bold {
+            get {
+                object obj = ResourceManager.GetObject("Icons8-Windows-8-Editing-Bold", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Icons8_Windows_8_Editing_Italic {
+            get {
+                object obj = ResourceManager.GetObject("Icons8-Windows-8-Editing-Italic", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Iconshock_Real_Vista_Text_Print {
             get {
                 object obj = ResourceManager.GetObject("Iconshock-Real-Vista-Text-Print", resourceCulture);
@@ -136,6 +176,26 @@ namespace SimpleWordPad.Properties {
         internal static System.Drawing.Bitmap Tatice_Cristal_Intense_Dossier_bleu {
             get {
                 object obj = ResourceManager.GetObject("Tatice-Cristal-Intense-Dossier-bleu", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Toma4025_Rumax_Folder_fonts {
+            get {
+                object obj = ResourceManager.GetObject("Toma4025-Rumax-Folder-fonts", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Trayse101_Photoshop_Filetypes_Colors {
+            get {
+                object obj = ResourceManager.GetObject("Trayse101-Photoshop-Filetypes-Colors", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

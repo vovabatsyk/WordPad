@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Drawing;
 using System.IO;
 using System.Windows.Forms;
 
@@ -45,7 +46,6 @@ namespace SimpleWordPad
             }
 
 
-
         }
 
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
@@ -76,6 +76,9 @@ namespace SimpleWordPad
                 isFileExist = true;
                 isFileChanged = false;
                 currentFileName = openFileDialog.FileName;
+
+                undoToolStripMenuItem.Enabled = false;
+                redoToolStripMenuItem.Enabled = false;
             }
         }
 
@@ -116,6 +119,8 @@ namespace SimpleWordPad
             isFileChanged = false;
             isFileExist = false;
             currentFileName = "";
+            undoToolStripMenuItem.Enabled = false;
+            redoToolStripMenuItem.Enabled = false;
         }
 
         private void saveAsToolStripMenuItem_Click(object sender, EventArgs e)
@@ -154,6 +159,83 @@ namespace SimpleWordPad
         private void RichTextBox_TextChanged(object sender, EventArgs e)
         {
             isFileChanged = true;
+            undoToolStripMenuItem.Enabled = true;
+        }
+
+        private void undoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            RichTextBox.Undo();
+            redoToolStripMenuItem.Enabled = true;
+            undoToolStripMenuItem.Enabled = false;
+        }
+
+        private void redoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            RichTextBox.Redo();
+            redoToolStripMenuItem.Enabled = false;
+            undoToolStripMenuItem.Enabled = true;
+        }
+
+        private void selectAllToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            RichTextBox.SelectAll();
+        }
+
+        private void boltToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            RichTextBox.SelectionFont = new Font(RichTextBox.Font, FontStyle.Bold);
+        }
+
+        private void normalToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            RichTextBox.SelectionFont = new Font(RichTextBox.Font, FontStyle.Regular);
+        }
+
+        private void italicToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            RichTextBox.SelectionFont = new Font(RichTextBox.Font, FontStyle.Italic);
+        }
+
+        private void underlineToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            RichTextBox.SelectionFont = new Font(RichTextBox.Font, FontStyle.Underline);
+        }
+
+        private void strikeoutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            RichTextBox.SelectionFont = new Font(RichTextBox.Font, FontStyle.Strikeout);
+        }
+
+        private void formatFontToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FontDialog dialog = new FontDialog();
+            dialog.ShowColor = true;
+
+
+          
+
+                DialogResult result = dialog.ShowDialog();
+
+                if (result == DialogResult.OK)
+                {
+
+                    RichTextBox.SelectionFont = dialog.Font;
+                    RichTextBox.SelectionColor = dialog.Color;
+
+                }
+            
+        }
+
+        private void textColorToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ColorDialog dialog = new ColorDialog();
+
+            DialogResult result = dialog.ShowDialog();
+
+            if (result == DialogResult.OK)
+            {
+                RichTextBox.SelectionColor = dialog.Color;
+            }
         }
     }
 }
