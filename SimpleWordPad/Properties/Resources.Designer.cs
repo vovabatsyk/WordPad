@@ -63,6 +63,26 @@ namespace SimpleWordPad.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Custom_Icon_Design_Mono_General_2_Copy {
+            get {
+                object obj = ResourceManager.GetObject("Custom-Icon-Design-Mono-General-2-Copy", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Custom_Icon_Design_Mono_General_2_Cut {
+            get {
+                object obj = ResourceManager.GetObject("Custom-Icon-Design-Mono-General-2-Cut", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Double_J_Design_Ravenna_3d_Save {
             get {
                 object obj = ResourceManager.GetObject("Double-J-Design-Ravenna-3d-Save", resourceCulture);
@@ -143,9 +163,29 @@ namespace SimpleWordPad.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Icons8_Windows_8_Editing_Paste_Special {
+            get {
+                object obj = ResourceManager.GetObject("Icons8-Windows-8-Editing-Paste-Special", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Iconshock_Real_Vista_Text_Print {
             get {
                 object obj = ResourceManager.GetObject("Iconshock-Real-Vista-Text-Print", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Iconsmind_Outline_Normal_Text {
+            get {
+                object obj = ResourceManager.GetObject("Iconsmind-Outline-Normal-Text", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

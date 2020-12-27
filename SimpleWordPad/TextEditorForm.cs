@@ -33,9 +33,11 @@ namespace SimpleWordPad
                     case DialogResult.Yes:
                         SaveFile();
                         ClearEditor();
+                        toolStripStatusLabel.Text = "New Document is Created!";
                         break;
                     case DialogResult.No:
                         ClearEditor();
+                        toolStripStatusLabel.Text = "New Document is Created!";
                         break;
                 }
 
@@ -43,6 +45,7 @@ namespace SimpleWordPad
             else
             {
                 ClearEditor();
+                toolStripStatusLabel.Text = "New Document is Created!";
             }
 
 
@@ -79,6 +82,9 @@ namespace SimpleWordPad
 
                 undoToolStripMenuItem.Enabled = false;
                 redoToolStripMenuItem.Enabled = false;
+
+                toolStripStatusLabel.Text = "File is Opened!";
+
             }
         }
 
@@ -98,6 +104,7 @@ namespace SimpleWordPad
                     RichTextBox.SaveFile(currentFileName, RichTextBoxStreamType.RichText);
 
                 isFileChanged = false;
+                toolStripStatusLabel.Text = "File saved!";
             }
             else
             {
@@ -146,6 +153,7 @@ namespace SimpleWordPad
                 isFileExist = true;
                 isFileChanged = false;
                 currentFileName = saveFileDialog.FileName;
+                toolStripStatusLabel.Text = "File saved!";
             }
         }
 
@@ -154,26 +162,45 @@ namespace SimpleWordPad
             isFileExist = false;
             isFileChanged = false;
             currentFileName = "";
+
+            if (Control.IsKeyLocked(Keys.CapsLock))
+            {
+                capsToolStripStatusLabel.Text = "CAPS LOCK ON";
+            }
+            else
+            {
+                capsToolStripStatusLabel.Text = "CAPS LOCK OFF";
+            }
         }
 
         private void RichTextBox_TextChanged(object sender, EventArgs e)
         {
             isFileChanged = true;
             undoToolStripMenuItem.Enabled = true;
+            toolStripButtonUndo.Enabled = true;
+            undoToolStripMenuItem1.Enabled = true;
         }
 
         private void undoToolStripMenuItem_Click(object sender, EventArgs e)
         {
             RichTextBox.Undo();
             redoToolStripMenuItem.Enabled = true;
+            toolStripButtonRedo.Enabled = true;
+            redoToolStripMenuItem1.Enabled = true;
             undoToolStripMenuItem.Enabled = false;
+            undoToolStripMenuItem1.Enabled = false;
+            toolStripButtonUndo.Enabled = false;
         }
 
         private void redoToolStripMenuItem_Click(object sender, EventArgs e)
         {
             RichTextBox.Redo();
             redoToolStripMenuItem.Enabled = false;
+            redoToolStripMenuItem1.Enabled = false;
+            toolStripButtonRedo.Enabled = false;
             undoToolStripMenuItem.Enabled = true;
+            toolStripButtonUndo.Enabled = true;
+            underlineToolStripMenuItem1.Enabled = true;
         }
 
         private void selectAllToolStripMenuItem_Click(object sender, EventArgs e)
@@ -211,19 +238,15 @@ namespace SimpleWordPad
             FontDialog dialog = new FontDialog();
             dialog.ShowColor = true;
 
+            DialogResult result = dialog.ShowDialog();
 
-          
+            if (result == DialogResult.OK)
+            {
 
-                DialogResult result = dialog.ShowDialog();
+                RichTextBox.SelectionFont = dialog.Font;
+                RichTextBox.SelectionColor = dialog.Color;
+            }
 
-                if (result == DialogResult.OK)
-                {
-
-                    RichTextBox.SelectionFont = dialog.Font;
-                    RichTextBox.SelectionColor = dialog.Color;
-
-                }
-            
         }
 
         private void textColorToolStripMenuItem_Click(object sender, EventArgs e)
@@ -237,5 +260,47 @@ namespace SimpleWordPad
                 RichTextBox.SelectionColor = dialog.Color;
             }
         }
+
+        private void editToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void RichTextBox_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (Control.IsKeyLocked(Keys.CapsLock))
+            {
+                capsToolStripStatusLabel.Text = "CAPS LOCK ON";
+            }
+            else
+            {
+                capsToolStripStatusLabel.Text = "CAPS LOCK OFF";
+            }
+        }
+
+        private void cutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (RichTextBox.SelectionLength > 0)
+                RichTextBox.Cut();
+        }
+
+        private void copyToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+            if (RichTextBox.SelectionLength > 0)
+                RichTextBox.Copy();
+        }
+
+        private void pasteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            RichTextBox.Paste();
+        }
+        private void printToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            PrintDialog printDialog = new PrintDialog();
+            printDialog.ShowDialog();
+         }
+
+  
     }
 }
